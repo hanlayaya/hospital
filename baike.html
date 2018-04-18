@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>百科治百病</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		a{
+			text-decoration: none;
+			color:#017489;
+		}
+		/*a:hover{
+			color:#017489;
+		}*/
+		.main{
+			width: 1200px;
+			height: auto;
+			/*background:lightblue;*/
+			margin: 0 auto;
+		}
+		.title{
+			width: 1200px;
+			height: 100px;
+			background: url(img/title5.png);
+			margin: 0 auto;
+		}
+		#search_box{
+			/*float: right;
+			margin-right: 45px;*/
+			width: 300px;
+			position: relative;
+			top: 65px;
+			margin-left:990px;
+		}
+		#s{
+			width: 190px;
+			height: 26px;
+			border-radius: 5px;
+			border:1.5px solid #b6d9e4;
+		}
+		#go{
+			float: left;
+		}
+		.naver{
+			width: 1300px;
+			height: 50px;
+			/*background: red;*/
+			background: url(img/nav_img.png);
+			background-size:100% 100%;
+			margin: 0 auto;
+			margin-left: -50px;
+		}
+		.naver ul{
+			width: 800px;
+			height: 40px;
+			margin-left: 200px;
+		}
+		.naver ul li{
+			width: 110px;
+			height: 40px;
+			line-height: 40px;
+			list-style-type: none;
+			float: left;
+			/*margin:0 2px;*/
+			text-align: center;
+			padding-top: 6px;
+		}
+		.naver ul li a{
+			text-decoration: none;
+			color:#017489;
+			font-size: 15px;
+			display: inline-block;
+			width: 110px;
+			height: 40px;
+		}
+		.naver ul li a:hover{
+			background:url(img/nav_img1.png) no-repeat center;
+			/*z-index: 222;*/
+			/*position: relative;*/
+			color:#0096b1;
+		}
+		#zjzx{
+			/*background: #fbfefd;*/
+			/*opacity: 0;*/
+			display: none;
+			position: absolute;
+			width: 108px;	
+			height:190px;
+			margin-left: 2px;		
+		}
+		#bk{
+			position: absolute;
+			margin-left: 2px;
+			width: 108px;
+			height: 190px;
+			display: none;
+		}
+		#lcfw{
+			position: absolute;
+			margin-left: 2px;
+			width: 108px;
+			height: 100px;
+			display: none;
+		}
+		#ky{
+			position: absolute;
+			margin-left: 2px;
+			width: 108px;
+			height: 200px;
+			display: none;
+		}
+		#jgcx{
+			position: absolute;
+			margin-left: 2px;
+			width: 108px;
+			height: 200px;
+			display: none;
+		}
+		.banner{
+			width: 1200px;
+			height: 270px;
+			background:url(img/banner.png) no-repeat;
+			background-size:contain;
+			margin: 0 auto;
+		}
+		.nav{
+			width:127px; 
+			height:12px;
+			position: absolute;
+			/*background:pink;*/
+			top: 400px;
+			left: 600px;
+			z-index:  333;
+		}
+		.ditu{
+			width: 100%;
+			height: 50px;
+			/*background: pink;*/
+		}
+		.contain_main1{
+			width: 1200px;
+			height: 280px;
+			margin: 0 auto;
+			background: url(img/banner2.jpg) no-repeat;
+			background-size: cover;
+		}
+		.contain_main2{
+			width: 1200px;
+			height:107px;
+			background:#c8e2f3;
+			margin: 15px auto;
+		}
+		.contain_main3{
+			width: 1200px;
+			height:740px;
+			background:#fff;
+			margin: 0 auto;
+			position: relative;
+			z-index: 0;
+		}
+		.contain_main4{
+			width: 1200px;
+			height:370px;
+			/*background:pink;*/
+			border:3px solid #ccc;
+			margin: 15px auto;
+		}
+		.contain_main5{
+			width: 1200px;
+			height: 400px;
+			/*background: pink;*/
+			/*border: 1px solid pink;*/
+			margin: 0 auto;
+		}
+		.contain_main6{
+			width: 1200px;
+			height: 500px;
+			background: lightblue;
+			margin: 0 auto;
+		}
+		.contain_main7{
+			width: 1200px;
+			height: 300px;
+			/*background:pink;*/
+			margin: 0 auto;
+			margin-top: -100px;
+			background: #c8e3f4;
+		}
+		.contain_main7_1{
+			width: 100%;
+			height: 100px;
+			/*background: pink;*/
+		}
+		.contain_main7_2{
+			width: 100%;
+			height: 200px;
+			background: url(img/do.png) no-repeat;
+			background-size: cover;
+		}
+		#diid{
+			float: left;
+			margin-left: 70px;
+			padding-top: 10px;
+			list-style-type: none;
+			text-decoration: none;
+		}
+	</style>
+	<script type="text/javascript">
+			function appear(){
+				document.getElementById('zjzx').style.display="block";			
+			}
+			function disappear(){
+				document.getElementById('zjzx').style.display="none";	
+			}
+			function appear1(){
+				document.getElementById('bk').style.display="block";
+			}
+			function disappear1(){
+				document.getElementById('bk').style.display="none";
+			}
+			function appear2(){
+				document.getElementById('lcfw').style.display="block";
+			}
+			function disappear2(){
+				document.getElementById('lcfw').style.display="none";
+			}
+			function appear3(){
+				document.getElementById('ky').style.display="block";
+			}
+			function disappear3(){
+				document.getElementById('ky').style.display="none";
+			}
+			function appear4(){
+				document.getElementById('jgcx').style.display="block";
+			}
+			function disappear4(){
+				document.getElementById('jgcx').style.display="none";
+			}
+
+
+			function tab1(){
+				var tab1=document.getElementById('tab1');
+				var tab2=document.getElementById('tab2');
+				var tab3=document.getElementById('tab3');
+				var tab4=document.getElementById('tab4');
+				var tab5=document.getElementById('tab5');
+				// if (tab.style.display="block") {
+				// 	tab.style.display="none";
+				// } else {
+				// 	tab.style.display="block";
+				// }
+				var tab11=document.getElementById('tab11');
+				var tab22=document.getElementById('tab22');
+				var tab33=document.getElementById('tab33');
+				var tab44=document.getElementById('tab44');
+				var tab55=document.getElementById('tab55');
+				tab1.onmouseover=function(){
+					tab11.style.display="block";
+				}
+				// tab1.onmouseout=function(){
+				// 	tab11.style.display="none";
+				// }
+				tab2.onmouseover=function(){
+					tab22.style.display="block";
+				}
+				// tab2.onmouseout=function(){
+				// 	tab22.style.display="none";
+				// }
+				tab3.onmouseover=function(){
+					tab33.style.display="block";
+				}
+				// tab3.onmouseout=function(){
+				// 	tab33.style.display="none";
+				// }
+				tab4.onmouseover=function(){
+					tab44.style.display="block";
+				}
+				// tab4.onmouseout=function(){
+				// 	tab44.style.display="none";
+				// }
+				tab5.onmouseover=function(){
+					tab55.style.display="block";
+				}
+				// tab5.onmouseout=function(){
+				// 	tab55.style.display="none";
+				// }
+			}
+			// function tab2(){
+				
+				
+			// 	tab1.onmouseover=function(){
+			// 		tab.style.display="none";
+			// 	}
+			// 	tab1.onmouseout=function(){
+			// 		tab.style.display="block";
+			// 	}
+			// }
+	</script>
+</head>
+<body>
+	<div class="main">
+		<div class="title">
+			<div id="search_box">
+				<form id="search_form" method="post" action="#">
+					<input type="text" name="search" value="  请输入关键词" onfocus="this.value='';" onblur="this.value='  请输入关键词'" id="s"/ >
+					<input type="image" name="search" src="img/search2.png" width="30" height="30" id="go" alt="Search" title="Search" style="top:-1px;position: absolute;border-radius: 5px;right:108px" >
+				</form>
+			</div>	
+		</div>
+		<div class="naver">
+			<ul>
+				<li>
+					<a href="index.html">首页</a>
+				</li>
+				<li id="zj1" onmouseover="appear()" onmouseout="disappear()">
+				<a href="#">专家在线</a>
+					<ul id="zjzx" style="background-color:lightblue;opacity: 0.7;">
+						<li><a href="#">专家团队</a></li>
+						<li><a href="#">专家出诊</a></li>
+						<li><a href="#">在线会诊</a></li>
+						<li><a href="#">电子处方</a></li>
+					</ul>
+				</li>
+				<li onmouseover="appear1()" onmouseout="disappear1()">
+				<a href="#">百科</a>
+					<ul id="bk" style="background-color:lightblue;opacity: 0.7;">
+						<li><a href="#">百科治百病</a></li>
+						<li><a href="#">药物信息</a></li>
+						<li><a href="#">健康讲堂</a></li>
+						<li><a href="#">疾病风险评估</a></li>
+					</ul>
+				</li>
+				<li onmouseover="appear2()" onmouseout="disappear2()">
+				<a href="#">临床服务</a>
+					<ul id="lcfw" style="background-color:lightblue;opacity: 0.7;">
+						<li><a href="#">护理团队</a></li>
+						<li><a href="#">护理科普</a></li>		
+					</ul>
+				</li>
+				<li onmouseover="appear3()" onmouseout="disappear3()">
+				<a href="#">科研</a>
+					<ul id="ky" style="background-color:lightblue;opacity: 0.7;">
+						<li><a href="#">科研成果</a></li>
+						<li><a href="#">科研动态</a></li>
+						<li><a href="#">学术队伍</a></li>
+						<li><a href="#">技术支持</a></li>
+					</ul>
+				</li>
+				<li onmouseover="appear4()" onmouseout="disappear4()">
+				<a href="#">结果查询</a>
+					<ul id="jgcx" style="background-color:lightblue;opacity: 0.7;">
+						<li><a href="#">检查报告查询</a></li>
+						<li><a href="#">等级证明</a></li>
+						<li><a href="#">电子病历</a></li>
+						<li><a href="#">诊断书查询</a></li>
+					</ul>
+				</li>
+				<li>
+				<a href="#">登陆／注册</a>
+
+				</li>
+			</ul>
+		</div>
+		<div class="ditu">
+			<img src="img/dt.png" width="2%" style="display: inline-block;margin-left:20px;padding-top: 10px;">
+			<div class="wz" style="display: inline-block;">
+				<a href="index.html" style="color:#000;font-size:12px;text-decoration: none;">首页</a> /
+				<a href="index.html"  style="color:#000;font-size:12px;text-decoration: none;">百科</a>
+			</div> /
+				<a href="index.html"  style="color:#000;font-size:12px;text-decoration: none;">百科治百病</a>
+			</div>	
+			<!-- <hr> -->
+		</div>
+		<div class="contain_main1">
+
+		</div>
+		
+		<div class="contain_main3">
+			<div class="contain_main2_1">
+				<p style="color:#017489;font-size: 22px;padding-top: 15px;padding-bottom: 10px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;最强科室:&nbsp;&nbsp;&nbsp;&nbsp;    百科治百病   &nbsp;&nbsp;&nbsp;&nbsp;坚持全心全意为人民服务</strong></p>
+				
+				<hr color="#c8e2f3" size="5px">
+			</div>
+			<div style="margin-top: 5px">
+				<img src="img/keshi.png" width="100%">
+			</div>
+			<br>
+			<hr color=#ccc>
+		</div>
+		<div class="contain_main2">
+		<center>
+			<table width="100%" border="0" cellpadding="30" cellspacing="10">
+				<tr>
+					<td align="center"><a href="">男科</a></td>
+					<td align="center"><a href="">女科</a></td>
+					<td align="center"><a href="">儿科</a></td>
+					<td align="center"><a href="">整形科</a></td>
+					<td align="center"><a href="">不孕不育</a></td>
+					<td align="center"><a href="">肿瘤科</a></td>
+					<td align="center"><a href="">胃病</a></td>
+					<td align="center"><a href="">糖尿病科</a></td>
+					<td align="center"><a href="">心血管科</a></td>
+					<td align="center"><a href="">肝病科</a></td>
+					<td align="center"><a href="">肾病科</a></td>
+					<td align="center"><a href="">肛肠科</a></td>
+					<td align="center"><a href="">泌尿科</a></td>
+					<td align="center"><a href="">耳鼻喉科</a></td>
+				</tr>
+				<tr>
+					<td align="center"><a href="">眼科</a></td>
+					<td align="center"><a href="">口腔科</a></td>
+					<td align="center"><a href="">骨科</a></td>
+					<td align="center"><a href="">皮肤科</a></td>
+					<td align="center"><a href="">神经科</a></td>
+					<td align="center"><a href="">产科</a></td>
+					<td align="center"><a href="">呼吸科</a></td>
+					<td align="center"><a href="">乙肝</a></td>
+					<td align="center"><a href="">艾滋病</a></td>
+					<td align="center"><a href="">血液科</a></td>
+					<td align="center"><a href="">消化科</a></td>
+					<td align="center"><a href="">传染科</a></td>
+					<td align="center"><a href="">风湿科</a></td>
+					<td align="center"><a href="">内分泌科</a></td>
+				</tr>
+				<tr>
+					<td align="center"><a href="">骨科</a></td>
+					<td align="center"><a href="">乳腺外科</a></td>
+					<td align="center"><a href="">泌尿科</a></td>
+					<td align="center"><a href="">五官科</a></td>
+					<td align="center"><a href="">内科</a></td>
+					<td align="center"><a href="">外科</a></td>
+					<td align="center"><a href="">过敏科</a></td>
+					<td align="center"><a href="">中医科</a></td>
+					<td align="center"><a href="">体检科</a></td>
+					<td align="center"><a href="">心理科</a></td>
+					<td align="center"><a href="">急救科</a></td>
+					<td align="center"><a href="">传染科</a></td>
+					<td align="center"><a href="">风湿科</a></td>
+					<td align="center"><a href="">其他科</a></td>
+				</tr>
+			</table>
+		</center>	
+		</div>
+		<div class="contain_main4" id="contain_main4">
+			<p style="color:#017489;font-size: 22px;padding-top: 15px;padding-bottom: 10px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;百科治百病:&nbsp;&nbsp;&nbsp;&nbsp;    针对病情   &nbsp;&nbsp;&nbsp;&nbsp;对症看病对症吃药</strong></p>
+			<hr color="#c8e2f3" size="5px">
+			<div id="tab1" onmouseover="tab1()" style="width: 200px;height: 60px;border-bottom:3px solid #ccc;background:#eff5f7;">
+				<a href="" style="color:#000;font-size:20px;text-decoration: none;"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;疾病库</a>
+			</div>
+			<div id="tab2" onmouseover="tab1()" style="width: 200px;height: 60px;border-bottom:3px solid #ccc;background:#eff5f7;">
+				<a href="" style="color:#000;font-size:20px;text-decoration: none;"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;症状库</a>
+			</div>
+			<div id="tab3" onmouseover="tab1()" style="width: 200px;height: 60px;border-bottom:3px solid #ccc;background:#eff5f7;">
+				<a href="" style="color:#000;font-size:20px;text-decoration: none;"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;医生库</a>
+			</div>
+			<div id="tab4" onmouseover="tab1()" style="width: 200px;height: 60px;border-bottom:3px solid #ccc;background:#eff5f7;">
+				<a href="" style="color:#000;font-size:20px;text-decoration: none;"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;医院库</a>
+			</div>
+			<div id="tab5" onmouseover="tab1()" style="width: 200px;height: 60px;border-bottom:3px solid #ccc;background:#eff5f7;">
+				<a href="" style="color:#000;font-size:20px;text-decoration: none;"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;药品库</a>
+			</div>
+
+			<div id="tab11" style="width:990px;height:310px;float:right;margin-top:-315px;display:block;">
+				<div class="blue1_1" style="display:inline-block;width: 70px; height: 70px;background:lightblue;margin-left: 20px;margin-top: 20px">
+					<span style="font-size: 20px;color:#fff"><b><br>&nbsp;&nbsp;内科</b></span>
+					<table border="0" style="width: 400px;margin-top: -40px;margin-left:85px;">
+						<tr>
+							<td><a href="">糖尿病</a></td>
+							<td><a href="">冠心病</a></td>
+							<td><a href="">高血压</a></td>
+							<td><a href="">痛风</a></td>
+							<td><a href="">慢性胃炎</a></td>
+							<td><a href="">便秘</a></td>
+						</tr>
+						<tr>
+							<td><a href="">感冒</a></td>
+							<td><a href="">肺炎</a></td>
+							<td><a href="">白血病</a></td>
+							<td><a href="">肾盂肾炎</a></td>
+							<td><a href="">神经衰弱</a></td>
+							<td><a href="">贫血</a></td>
+						</tr>
+					</table>
+				</div>
+				<div class="blue1_2" style="display:inline-block;width: 70px; height: 70px;background:lightblue;margin-left: 420px;margin-top: 20px">
+					<span style="font-size: 20px;color:#fff"><b><br>&nbsp;&nbsp;皮肤</b></span>
+					<table border="0" style="width: 400px;margin-top: -40px;margin-left:85px;">
+						<tr>
+							<td><a href="">老年斑</a></td>
+							<td><a href="">过敏湿疹</a></td>
+							<td><a href="">冻疮</a></td>
+							<td><a href="">雀斑</a></td>
+							<td><a href="">手足癣</a></td>
+							<!-- <td><a href="">便秘</a></td> -->
+						</tr>
+						<tr>
+							<td><a href="">银雪病</a></td>
+							<td><a href="">脚气</a></td>
+							<td><a href="">脱发</a></td>
+							<td><a href="">白癜风</a></td>
+							<td><a href="">神疥疮</a></td>
+							<!-- <td><a href="">贫血</a></td> -->
+						</tr>
+					</table>
+				</div><br>
+				<div class="blue1_3" style="display:inline-block;width: 70px; height: 70px;background:lightblue;margin-left: 20px;margin-top: 30px">
+					<span style="font-size: 20px;color:#fff"><b><br>&nbsp;&nbsp;妇科</b></span>
+					<table border="0" style="width: 400px;margin-top: -40px;margin-left:85px;">
+						<tr>
+							<td><a href="">宫外孕</a></td>
+							<td><a href="">卵巢早衰</a></td>
+							<td><a href="">公斤息肉</a></td>
+							<td><a href="">不孕症</a></td>
+							<td><a href="">阴道炎</a></td>						
+						</tr>
+						<tr>
+							<td><a href="">子宫肌瘤</a></td>
+							<td><a href="">外阴瘙痒</a></td>
+							<td><a href="">盆腔积液</a></td>
+							<td><a href="">流产</a></td>
+							<td><a href="">盆腔炎</a></td>						
+						</tr>
+					</table>
+				</div>
+				<div class="blue1_4" style="display:inline-block;width: 70px; height: 70px;background:lightblue;margin-left: 420px;margin-top: 20px">
+					<span style="font-size: 20px;color:#fff"><b><br>&nbsp;&nbsp;皮肤</b></span>
+					<table border="0" style="width: 400px;margin-top: -40px;margin-left:85px;">
+						<tr>
+							<td><a href="">老年斑</a></td>
+							<td><a href="">过敏湿疹</a></td>
+							<td><a href="">冻疮</a></td>
+							<td><a href="">雀斑</a></td>
+							<td><a href="">手足癣</a></td>
+							<!-- <td><a href="">便秘</a></td> -->
+						</tr>
+						<tr>
+							<td><a href="">银雪病</a></td>
+							<td><a href="">脚气</a></td>
+							<td><a href="">脱发</a></td>
+							<td><a href="">白癜风</a></td>
+							<td><a href="">神疥疮</a></td>
+							<!-- <td><a href="">贫血</a></td> -->
+						</tr>
+					</table>
+				</div><br>
+				<div class="blue1_5" style="display:inline-block;width: 70px; height: 70px;background:lightblue;margin-left: 20px;margin-top: 30px">
+					<span style="font-size: 20px;color:#fff"><b><br>&nbsp;&nbsp;妇科</b></span>
+					<table border="0" style="width: 400px;margin-top: -40px;margin-left:85px;">
+						<tr>
+							<td><a href="">宫外孕</a></td>
+							<td><a href="">卵巢早衰</a></td>
+							<td><a href="">公斤息肉</a></td>
+							<td><a href="">不孕症</a></td>
+							<td><a href="">阴道炎</a></td>						
+						</tr>
+						<tr>
+							<td><a href="">子宫肌瘤</a></td>
+							<td><a href="">外阴瘙痒</a></td>
+							<td><a href="">盆腔积液</a></td>
+							<td><a href="">流产</a></td>
+							<td><a href="">盆腔炎</a></td>						
+						</tr>
+					</table>
+				</div>
+				<div class="blue1_6" style="display:inline-block;width: 70px; height: 70px;background:lightblue;margin-left: 420px;margin-top: 20px">
+					<span style="font-size: 20px;color:#fff"><b><br>&nbsp;&nbsp;皮肤</b></span>
+					<table border="0" style="width: 400px;margin-top: -40px;margin-left:85px;">
+						<tr>
+							<td><a href="">老年斑</a></td>
+							<td><a href="">过敏湿疹</a></td>
+							<td><a href="">冻疮</a></td>
+							<td><a href="">雀斑</a></td>
+							<td><a href="">手足癣</a></td>
+							<!-- <td><a href="">便秘</a></td> -->
+						</tr>
+						<tr>
+							<td><a href="">银雪病</a></td>
+							<td><a href="">脚气</a></td>
+							<td><a href="">脱发</a></td>
+							<td><a href="">白癜风</a></td>
+							<td><a href="">神疥疮</a></td>
+							<!-- <td><a href="">贫血</a></td> -->
+						</tr>
+					</table>
+				</div><br>
+			</div>
+			<div id="tab22" style="width:990px;height:310px;float:right;border:3px solid green;margin-top:-315px;display:none;">
+				
+			</div> 
+			<div id="tab33" style="width:990px;height:310px;float:right;border:3px solid yellow;margin-top:-315px;display:none;">
+				
+			</div>
+			<div id="tab44" style="width:990px;height:310px;float:right;border:3px solid #000;margin-top:-315px;display:none;">
+				
+			</div>
+			<div id="tab55" style="width:990px;height:310px;float:right;border:3px solid orange;margin-top:-315px;display:none;">
+				
+			</div>
+		</div><br>
+		<div class="contain_main5">
+			<p style="color:#017489;font-size: 22px;padding-top: 15px;padding-bottom: 10px;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;健康速递:&nbsp;&nbsp;&nbsp;&nbsp;   论坛 博客 视频   &nbsp;&nbsp;&nbsp;&nbsp;教你上网找健康</strong></p>
+			<hr color="#c8e2f3" size="5px">
+			<br><br>
+			<div style="width: 450px;height:30px;background:#017489;border-radius:6px;margin: 0 auto;opacity: 0.7;text-align: center;color:#fff;padding-top:10px">
+				世界卫生组织高度评价，全球四大妇科峰会一致推荐
+			</div><br><br>
+			<div class="sp4" style="width: 85%;height: 200px;margin:0 auto;">
+				<table width="100%" cellspacing="10">
+					<tr>
+						<td align="center"><a href=""><img src="img/p1.png" width="75%"></a></td>
+						<td align="center"><a href=""><img src="img/p1.png" width="75%"></a></td>
+						<td align="center"><a href=""><img src="img/p1.png" width="75%"></a></td>
+						<td align="center"><a href=""><img src="img/p1.png" width="75%"></a></td>
+					</tr>
+				</table>
+			</div>	<br><br>
+			<div style="width: 450px;height:30px;background:#017489;border-radius:6px;margin: 0 auto;opacity: 0.7;text-align: center;color:#fff;padding-top:10px">
+				大众健康频道，时尚健康
+				<br><br>
+			</div>
+			<!-- <div style="width: 450px;height: ">
+				
+			</div> -->
+		</div><br><br><br><br><br>
+		<div class="contain_main6">
+			<img src="img/ssjk.png" width="100%">
+		</div>
+		<div class="contain_main7">
+			<div class="contain_main7_1">
+				<ul style="float: left;">
+					<li id="diid"><a href="#" style="color:#fff;">网站首页</a></li>
+					<li id="diid"><a href="#" style="color:#fff;">专家在线</a></li>
+					<li id="diid"><a href="#" style="color:#fff;">百科</a></li>
+					<li id="diid"><a href="#" style="color:#fff;">临床服务</a></li>
+					<li id="diid"><a href="#" style="color:#fff;">科研</a></li>
+					<li id="diid"><a href="#" style="color:#fff;">结果查询</a></li>
+					<li id="diid"><a href="#" style="color:#fff;">登陆／注册</a></li>
+				</ul>
+			</div>
+			<div class="contain_main7_2">
+
+			</div>
+		</div>
+	</div>	
+</body>
+</html>

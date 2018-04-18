@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>hospital</title>
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+		}
+		/*a:hover{
+			color:#017489;
+		}*/
+		.main{
+			width: 1200px;
+			height: auto;
+			/*background:lightblue;*/
+			margin: 0 auto;
+		}
+		.title{
+			width: 1200px;
+			height: 100px;
+			background: url(img/title5.png);
+			margin: 0 auto;
+		}
+		#search_box{
+			/*float: right;
+			margin-right: 45px;*/
+			width: 300px;
+			position: relative;
+			top: 65px;
+			margin-left:990px;
+		}
+		#s{
+			width: 190px;
+			height: 26px;
+			border-radius: 5px;
+			border:1.5px solid #b6d9e4;
+		}
+		#go{
+			float: left;
+		}
+		.naver{
+			width: 1200px;
+			height: 50px;
+			/*background: red;*/
+			background: url(img/nav_img.png);
+			background-size:100% 100%;
+			margin: 0 auto;
+		}
+		.naver ul{
+			width: 800px;
+			height: 40px;
+			margin-left: 200px;
+		}
+		.naver ul li{
+			width: 110px;
+			height: 40px;
+			line-height: 40px;
+			list-style-type: none;
+			float: left;
+			/*margin:0 2px;*/
+			text-align: center;
+			padding-top: 6px;
+		}
+		.naver ul li a{
+			text-decoration: none;
+			color:#017489;
+			font-size: 15px;
+			display: inline-block;
+			width: 110px;
+			height: 40px;
+		}
+		.naver ul li a:hover{
+			background:url(img/nav_img1.png) no-repeat center;
+			/*z-index: 222;*/
+			/*position: relative;*/
+			color:#0096b1;
+		}
+		#zjzx{
+			/*background: #fbfefd;*/
+			/*opacity: 0;*/
+			display: none;
+			position: absolute;
+			width: 108px;	
+			height:190px;
+			margin-left: 2px;		
+		}
+		#bk{
+			position: absolute;
+			margin-left: 2px;
+			width: 108px;
+			height: 190px;
+			display: none;
+		}
+		#lcfw{
+			position: absolute;
+			margin-left: 2px;
+			width: 108px;
+			height: 100px;
+			display: none;
+		}
+		#ky{
+			position: absolute;
+			margin-left: 2px;
+			width: 108px;
+			height: 200px;
+			display: none;
+		}
+		#jgcx{
+			position: absolute;
+			margin-left: 2px;
+			width: 108px;
+			height: 200px;
+			display: none;
+		}
+		.banner{
+			width: 1200px;
+			height: 270px;
+			background:url(img/banner.png) no-repeat;
+			background-size:contain;
+			margin: 0 auto;
+		}
+		#wapper{ position:relative;height:270px; width:1120px;margin: 0 auto; overflow:hidden}
+		#slideshow{width:1120px; height:300px; overflow:hidden; position:relative;}
+		#imglist{width:1264px; height:100%; float:left; padding:0; margin:0;position:absolute; left:0}
+		#imglist li{ width:100%;height:100%; float:left}
+		#nextlist{position:absolute; z-index:9}
+		#nextlist li{ float:left; display:inline; height:30px; padding:10px 0; width:79px;}
+		#nextlist li.current{background:#c00}
+		#bg{ position:absolute; z-index:1;background:#ff0;filter:alpha(opacity=20);opacity:0.2; height:50px; width:316px}
+		.btn .left{
+			width: 50px;
+			height: 50px;
+			/*border:2px solid blue;*/
+			position: relative;
+			top: 110px;
+			left: 0;
+			background: url(img/before.png);
+			background-size: 100% 100%;
+			cursor: pointer;
+		}
+		.btn .right{
+			width: 50px;
+			height: 50px;
+			position: relative;
+			top: 65px;
+			left:1150px;
+			background: url(img/after.png);
+			background-size: 100% 100%;
+			cursor: pointer;
+		}
+		.nav{
+			width:127px; 
+			height:12px;
+			position: absolute;
+			/*background:pink;*/
+			top: 400px;
+			left: 600px;
+		}
+		.contain_banner{
+			max-width: 1200px;
+			height: 170px;
+			background: #fff;
+			margin-left: 0px;
+			background: url(img/icon_bottom1.png);
+			background-size: 100% 120%;
+		}
+		.icon{
+			transform:scale(1,1);
+		    -webkit-transition-property: transform;
+			-webkit-transition-duration: 0.8s;
+	  }
+	  .icon:hover{
+	  	    transform:scale(1.1,1.1);
+		    -webkit-transition-property: transform;
+			-webkit-transition-duration: 0.8s;
+	  }
+		.contain_main1{
+			width: 940px;
+			height: 520px;
+			background: #fff;
+			/*border:1px solid #ccc;*/
+			margin-top: 5px!important;
+			margin: 0 auto;
+		}
+		.contain_main1_1{
+			width: 25%;
+			height: 100%;
+			background:#deecf4;
+			/*background: url(img/1111.png) no-repeat;*/
+			display: inline-block;
+			float: left;
+
+		}
+		.qian{
+			width: 100%;
+			height: 40px;
+			/*background:#c8e2f3;*/
+			background:#deecf4;
+			/*box-shadow: 0px 2px 6px #ababab;*/
+		}
+		input[type="text"]{
+			color:#969696;
+			font-size: 12px;
+		}
+		input[name="xm"]{
+			border:1px solid #ccc;
+			border-radius: 3px;
+			width: 50%;
+			height: 20px;
+		}
+		#t{
+			width: 120px;
+			height: 20px;
+			border:1px solid #c9c9c9;
+			border-radius: 2px;
+		}
+		.contain_main1_2{
+			width: 45%;
+			height: 100%;
+			/*background: pink;*/
+			/*margin:0 auto;			*/
+			/*border:1px solid #ababab;*/
+			float: left;
+			display: inline-block;
+			margin-left: 2.5%;
+		}
+		.news{
+			width: 100%;
+			height: 60%;
+			/*background: pink;*/
+			background: url(img/new1.jpg) no-repeat;
+			background-size: cover;
+		}
+		.news_a{
+			width: 100%;
+			height: 50px;
+			padding-top: 5px;
+			background: #000;
+			opacity: 0;
+			position:relative;
+			top: 80%;
+			color:#000;
+			text-align: center;
+			-webkit-transition-property: opacity;
+			-webkit-transition-duration: 0.8s;
+		}
+		/*-----*/
+		.news:hover .news_a{
+			color:#fff;
+			background: #000;
+			opacity: 0.4;
+			-webkit-transition-property: opacity;
+			-webkit-transition-duration: 0.8s;
+		}
+		.contain_main1_3{
+			width: 25%;
+			height: 100%;
+			/*background: #82ded1;*/
+			border:1px solid #ababab;
+			float: left;
+			margin-left: 2%;
+			display: inline-block;
+		}
+		.wnlmarquee{
+			width: 100%;
+			height: 75%;
+			/*background: red;*/
+
+		}
+		.contain_main2{
+			width: 940px;
+			height: 300px;
+			/*background: lightblue;*/
+			background:#fff;
+			margin: 25px auto 0;
+			/*float: left;*/
+		}
+		.contain_main2_1{
+			width: 100%;
+			height: 60px;
+			background: #c8e3f4;
+		}
+		.contain_main2_2{
+			width: 50%;
+			height: 60%;
+			/*background: pink;*/
+			display: inline-block;
+		}
+		.contain_main2_3{
+			width: 50%;
+			height: 80%;
+			float: right;
+			/*background: red;*/
+		}
+		.qh{
+			position: relative;
+			top: -40px;
+		}
+		.contain_main3{
+			width: 940px;
+			height:600px;
+			background:#fff;
+			margin: 0px auto;
+			position: relative;
+			z-index: 222;
+		}
+		.contain_main4{
+			width: 940px;
+			height: 500px;
+			background:#fff;
+			margin: 0 auto;
+		}
+		.sp{
+			width: 90%;
+			margin: 0 auto;
+			/*background: red;*/
+			/*border: 1px solid #ccc;*/
+			height: 300px;
+		}
+		.contain_main5{
+			width: 940px;
+			height: 200px;
+			/*background:pink;*/
+			margin: 0 auto;
+			margin-top: -100px;
+			background: #c8e3f4;
+		}
+		.contain_main5_1{
+			width: 100%;
+			height: 40px;
+			/*background: pink;*/
+		}
+		.contain_main5_2{
+			width: 100%;
+			height: 160px;
+			background: url(img/do.png);
+		}
+		#diid{
+			float: left;
+			margin-left: 70px;
+			padding-top: 10px;
+			list-style-type: none;
+			text-decoration: none;
+		}
+	</style>
+	<script src="jquery.js"></script>
+	<script type="text/javascript">
+			var num = 0;
+			function nextElement(eleObj,aa){
+			var obj = document.getElementById(eleObj);
+				 if (obj.movement) {
+			    clearTimeout(obj.movement);
+			  }
+				if (!obj.style.bottom) {
+			    	obj.style.bottom = "-50px";
+				}
+				var xpos = parseInt(obj.style.bottom);
+				  if (xpos == aa) {
+					return false;
+					}
+				  if (xpos > aa) {
+					var dist = Math.ceil((xpos - aa)/5);
+					xpos = xpos - dist;
+				  }
+					if (xpos < aa) {
+					var dist = Math.ceil((aa - xpos)/5);
+					xpos = xpos + dist;
+				  }
+				  obj.style.bottom = xpos + "px";
+			  
+			  
+			  var repeat = "nextElement('"+eleObj+"','"+aa+"')";
+			  obj.movement = setTimeout(repeat,30);
+			}
+			function moveElement() {
+			var elem = document.getElementById("slideshow");
+			var nextElem = document.getElementById("nextlist");
+			var imgElem = document.getElementById("imglist");
+			var lis = elem.getElementsByTagName("li");
+			var nextLis = nextElem.getElementsByTagName("li");
+				
+				 if (imgElem.movement) {
+			    clearTimeout(imgElem.movement);
+			  }
+			  if (!imgElem.style.left) {
+			    imgElem.style.left = "0";
+			  }
+				  var xpos = parseInt(imgElem.style.left);
+				  var naa = num * -1500;
+				  if (xpos == naa) {
+						if(num==(lis.length - 1) || num>lis.length){
+							num=0;
+							return false;
+						}
+						else{
+							num++;
+							return false;
+						}
+					}
+				for(var i=0;i<nextLis.length;i++){
+					nextLis[i].className="";
+					nextLis[num].className="current";
+				}
+				  if (xpos > naa) {
+					var dist = Math.ceil((xpos - naa)/4);
+					xpos = xpos - dist;
+				  }
+					if (xpos < naa) {
+					var dist = Math.ceil((naa - xpos)/4);
+					xpos = xpos + dist;
+				  }
+				  imgElem.style.left = xpos + "px";
+			  
+			  
+			  var repeat = "moveElement()";
+			  imgElem.movement = setTimeout(repeat,30);
+			  
+			}
+			function checkMove(){
+			var elem = document.getElementById("slideshow");
+			var nextElem = document.getElementById("nextlist");
+			var imgElem = document.getElementById("imglist");
+			var bgElem = document.getElementById("wapper");
+			var lis = elem.getElementsByTagName("li");
+			var nextLis = nextElem.getElementsByTagName("li");
+				// 	bgElem.onmouseover=function(){
+				// 		nextElement("nextlist",0);
+				// 		nextElement("bg",0);
+				// 	}
+				// 	bgElem.onmouseout=function(){
+				// 		nextElement("nextlist",-1120);
+				// 		nextElement("bg",-1120);
+				// 	}
+				// for(var i=0;i<nextLis.length;i++){
+					
+				// 	nextLis[i].onmouseover=function(){
+				// 		clearInterval(changebox);
+				// 		thisMove(this);
+				// 	}
+				// 	nextLis[i].onmouseout=function(){
+				// 		startMove();
+				// 	}
+				// 	lis[i].onmouseover=function(){
+				// 		clearInterval(changebox);
+				// 		//thisStop(this);
+				// 	}
+				// 	lis[i].onmouseout=function(){
+				// 		startMove();
+				// 	}
+				// }
+				function startMove(){
+					changebox = setInterval("moveElement()",3000);
+				}
+				function thisMove(obj){
+					for(var i=0;i<nextLis.length;i++){
+						nextLis[i].className="";
+						if(nextLis[i]==obj){
+							nextLis[i].className="current";
+							num=i;
+							setTimeout("moveElement()",0);
+						}
+						else{
+							 nextLis[i].className="";
+						}
+					}
+				}
+			}
+			changebox = setInterval("moveElement()",3000);
+			checkMove();
+
+
+
+
+			function showDaTu(src){
+				document.getElementById('defaultImg').src=src;
+			}
+			function appear(){
+				document.getElementById('zjzx').style.display="block";			
+			}
+			function disappear(){
+				document.getElementById('zjzx').style.display="none";	
+			}
+			function appear1(){
+				document.getElementById('bk').style.display="block";
+			}
+			function disappear1(){
+				document.getElementById('bk').style.display="none";
+			}
+			function appear2(){
+				document.getElementById('lcfw').style.display="block";
+			}
+			function disappear2(){
+				document.getElementById('lcfw').style.display="none";
+			}
+			function appear3(){
+				document.getElementById('ky').style.display="block";
+			}
+			function disappear3(){
+				document.getElementById('ky').style.display="none";
+			}
+			function appear4(){
+				document.getElementById('jgcx').style.display="block";
+			}
+			function disappear4(){
+				document.getElementById('jgcx').style.display="none";
+			}
+	</script>
+</head>
+<body>
+	<div class="main">
+		<div class="title">
+			<div id="search_box">
+				<form id="search_form" method="post" action="#">
+					<input type="text" name="search" value="  请输入关键词" onfocus="this.value='';" onblur="this.value='  请输入关键词'" id="s"/ >
+					<input type="image" name="search" src="img/search2.png" width="30" height="30" id="go" alt="Search" title="Search" style="top:-1px;position: absolute;border-radius: 5px;right:108px" >
+				</form>
+			</div>	
+		</div>
+		<div class="naver">
+			<ul>
+				<li>
+					<a href="#">首页</a>
+				</li>
+				<li id="zj1" onmouseover="appear()" onmouseout="disappear()">
+				<a href="#">专家在线</a>
+					<ul id="zjzx" style="background-color:lightblue;opacity: 0.7;">
+						<li><a href="zjtd.html" target="_blank">专家团队</a></li>
+						<li><a href="zjcz.html">专家出诊</a></li>
+						<li><a href="zxhz.html">在线会诊</a></li>
+						<li><a href="dzcf.html">电子处方</a></li>
+					</ul>
+				</li>
+				<li onmouseover="appear1()" onmouseout="disappear1()">
+				<a href="#">百科</a>
+					<ul id="bk" style="background-color:lightblue;opacity: 0.7;">
+						<li><a href="baike.html">百科治百病</a></li>
+						<li><a href="#">药物信息</a></li>
+						<li><a href="#">健康讲堂</a></li>
+						<li><a href="#">疾病风险评估</a></li>
+					</ul>
+				</li>
+				<li onmouseover="appear2()" onmouseout="disappear2()">
+				<a href="#">临床服务</a>
+					<ul id="lcfw" style="background-color:lightblue;opacity: 0.7;">
+						<li><a href="#">护理团队</a></li>
+						<li><a href="#">护理科普</a></li>		
+					</ul>
+				</li>
+				<li onmouseover="appear3()" onmouseout="disappear3()">
+				<a href="#">科研</a>
+					<ul id="ky" style="background-color:lightblue;opacity: 0.7;">
+						<li><a href="#">科研成果</a></li>
+						<li><a href="#">科研动态</a></li>
+						<li><a href="#">学术队伍</a></li>
+						<li><a href="#">技术支持</a></li>
+					</ul>
+				</li>
+				<li onmouseover="appear4()" onmouseout="disappear4()">
+				<a href="#">结果查询</a>
+					<ul id="jgcx" style="background-color:lightblue;opacity: 0.7;">
+						<li><a href="#">检查报告查询</a></li>
+						<li><a href="#">等级证明</a></li>
+						<li><a href="#">电子病历</a></li>
+						<li><a href="#">诊断书查询</a></li>
+					</ul>
+				</li>
+				<li>
+				<a href="#">登陆／注册</a>
+
+				</li>
+			</ul>
+		</div>
+		<div class="banner">
+			<!-- <div id="wapper">
+				<div id="slideshow">
+					<ul id="imglist">
+						<li><img src="img/banner.png"></li>
+						<li><img src="img/doc_banner.jpg"></li>
+						<li><img src="img/new2.jpg"></li>
+						<li><img src="img/banner.png"></li>
+					</ul>
+				</div>
+					<div id="nextlist">
+					<ul>
+					<li class="current">111</li>
+						<li>222</li>
+						<li>333</li>
+						<li>444</li>
+					</ul>
+					</div>
+			<div id="bg"></div>
+			</div>
+			<div class="btn">
+				<div class="left"></div>
+				<div class="right"></div>
+			</div> -->
+		</div>
+		<div class="contain_banner">
+		<center><br>
+			<table border="0" width="75%">
+				<tr>
+					<td class="icon" align="center" valign="center"><img src="img/icon1.png" width="40%"></td>
+					<td class="icon" align="center" valign="center"><img src="img/icon2.png" width="40%"></td>
+					<td class="icon" align="center" valign="center"><img src="img/icon3.png" width="40%"></td>
+					<td class="icon" align="center" valign="center"><img src="img/icon4.png" width="40%"></td>
+				</tr>
+				<tr>
+					<td align="center"><a href="#">出诊服务</a></td>
+					<td align="center"><a href="#">预约挂号</a></td>
+					<td align="center"><a href="#">结果查询</a></td>
+					<td align="center"><a href="#">方位指南</a></td>
+				</tr>
+			</table>
+		</center>	
+		</div>
+		<div class="contain_main1">
+			<div class="contain_main1_1">
+				<div class="qian">
+					<p style="font-size: 16px;color:#000;padding-top:10px;padding-left:6px"><b>快速预约</b></p>
+
+					<form style="margin-top: 20px;margin-left: 10px">
+						<label style="color:#017489;font-size: 14px">您的姓名：</label>
+						 <input type="text" value="  name" id="t" onfocus="this.value='';" onblur="this.value='  name'"/><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						 <label style="color:#017489;font-size: 14px;">性别：</label>&nbsp;
+						 <input type="radio" name="sex" checked="">
+						 	<label style="color:#017489;font-size: 12px">男</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						 	<input type="radio" name="sex">
+						 	<label style="color:#017489;font-size: 12px">女
+						 	</label>	<br><br>
+						 <label style="color:#017489;font-size: 14px;">身份证号：</label>
+						 	<input type="text" value="  id_number" id="t" onfocus="this.value='';" onblur="this.value='  id_number'"/><br><br>
+						  <label style="color:#017489;font-size: 14px;">出生日期：</label>
+								 <select>
+								 	<option value="1">1980</option>
+								 	<option value="2">1981</option>
+								 	<option value="3">1982</option>
+								 	<option value="4">1983</option>
+								 	<option value="5">1984</option>
+								 	<option value="6">1985</option>
+								 	<option value="7">1986</option>
+								 </select>
+							 <label style="color:#017489;font-size: 12px">年</label>	
+								 <select>
+								 	<option value="1">01</option>
+								 	<option value="2">02</option>
+								 	<option value="3">03</option>
+								 	<option value="4">04</option>
+								 	<option value="5">05</option>
+								 	<option value="6">06</option>
+								 	<option value="7">07</option>
+								 </select>
+							 <label style="color:#017489;font-size: 12px">月</label>	<br><br>
+						<label style="color:#017489;font-size: 14px;">联系方式：</label>
+						 	<input type="text" value="  telephone" id="t" onfocus="this.value='';" onblur="this.value='  telephone'"/><br><br>	
+						 <label style="color:#017489;font-size: 14px;">预约科室：</label>
+								 <select>
+								 	<option value="1">耳鼻喉科</option>
+								 	<option value="2">男科</option>
+								 	<option value="3">妇科</option>
+								 	<option value="4">整形科</option>
+								 	<option value="5">神经科</option>
+								 	<option value="6">眼科</option>
+								 	<option value="7">口腔科</option>
+								 </select>	 
+					</form><br>
+					<p style="color:#ffb9cc;font-size: 12px">&nbsp;&nbsp;&nbsp;<b>重点提示：</b><br>
+						&nbsp;&nbsp;&nbsp;在选择专家及日期时，请一定要查看出诊
+						&nbsp;&nbsp;&nbsp;万年历选择正确的日期和时间
+					</p><br>
+					<form>
+					&nbsp;&nbsp;&nbsp;
+						 <label style="color:#017489;font-size: 14px;">预约专家：</label>
+								 <select>
+								 	<option value="1">章三</option>
+								 	<option value="2">里斯</option>
+								 	<option value="3">王五</option>
+								 	<option value="4">韩六</option>
+								 	<option value="5">赵七</option>
+								 	<option value="6">吴八</option>
+								 	<option value="7">夏久</option>
+								 </select>	 
+						<input type="button" name="" value="查看万年历">		 <br><br>
+					&nbsp;&nbsp;&nbsp;	
+						<label style="color:#017489;font-size: 14px;">时间段：</label>
+								 <select>
+								 	<option value="1">8:00-9:00</option>
+								 	<option value="2">9:00-10:00</option>
+								 	<option value="3">10:00-11:00</option>
+								 	<option value="4">13:00-14:00</option>
+								 	<option value="5">14:00-15:00</option>
+								 	<option value="6">15:00-16:00</option>
+								 	<option value="7">16:00-17:00</option>
+								 </select>	 
+								 <br><br>
+					&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;				 
+						<input type="submit" name="预约" value="点击预约" style="color:#000;background:#ffc36b;outline: 0;border:1px solid #ababab;border-radius: 5px">	
+					&nbsp;&nbsp;&nbsp;&nbsp;	
+						<input type="submit" name="重写" value="重新填写" style="color:#000;background:#e8e8e8;outline: 0;border:1px solid #ababab;border-radius: 5px"">	 
+					</form>
+				</div>
+			</div>
+			<div class="contain_main1_2">
+				<p style="font-size: 16px;color:#000;padding-top:11px;padding-left:6px;background:#deecf4; padding-top: 10px;padding-bottom: 10px; "><b>新闻动态</b></p>
+				<div class="news">
+					<div class="news_a">
+						北京医院于2016年9月2日展开网上医院的讨论 <br>
+						互联网＋的时代来临
+					</div>
+				</div>
+				<p style="text-align:left;margin-top: 10px;color:#017489">
+					2017年元旦假期期间门急诊医疗工作安排
+					<span style="padding-left: 90px;"><a href="" style="color:#017489;text-decoration-line: none;">更多>></a></span>
+				</p>
+				<ul style="list-style-type: none;line-height:25px;margin-top: 10px">
+					<li>
+						<img src="img/new_icon.gif" style="display: inline-block;">
+						<a href="#" style="font-size: 13px;color:#000;text-decoration: none;padding-left: 7px;">吉大二院通讯科开展院区无线网络质量优化工作...
+						</a>
+					</li>
+					<li>
+						<img src="img/new_icon.gif" style="display: inline-block;">
+						<a href="#" style="font-size: 13px;color:#000;text-decoration: none;padding-left: 7px;">我院举办全国第九届老年神经病学高级讲授班及学术研讨会...
+						</a>
+					</li>
+					<li>
+						<img src="img/new_icon.gif" style="display: inline-block;">
+						<a href="#" style="font-size: 13px;color:#000;text-decoration: none;padding-left: 7px;">《中华老年医学杂志》第八届编委会换届改选工作圆满完成...
+						</a>
+					</li>
+					<li>
+						<img src="img/new_icon.gif" style="display: inline-block;">
+						<a href="#" style="font-size: 13px;color:#000;text-decoration: none;padding-left: 7px;">北京医院“连心”东城第一人民医院...
+						</a>
+					</li>	
+				</ul>
+			</div>
+			<div class="contain_main1_3">
+				<img src="img/czwnl.png" width="100%">
+				<div class="wnlmarquee">
+					<marquee direction="up" scrollamount="4" height="100%" width="90%" onmouseover="this.stop()" onmouseout="this.start()" style="margin-left:5%">
+						<ul style="line-height: 30px;">
+							<li>
+								<img src="img/sj.png" style="display: inline-block;">
+								<a href="#" style="color:#017489;text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;2017年1月门诊著名专家出诊表</a>
+							</li>
+							<li>
+								<img src="img/sj.png" style="display: inline-block;">
+								<a href="#" style="color:#017489;text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;2017年1月门诊知名教授出诊表</a>
+							</li>
+							<li>
+								<img src="img/sj.png" style="display: inline-block;">
+								<a href="#" style="color:#017489;text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;2016年12月份门诊知名教授出诊表</a>
+							</li>
+							<li>
+								<img src="img/sj.png" style="display: inline-block;">
+								<a href="#" style="color:#017489;text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;2016年12月份门诊著名专家出诊表</a>
+							</li>
+							<li>
+								<img src="img/sj.png" style="display: inline-block;">
+								<a href="#" style="color:#017489;text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;2016年9月门诊著名专家出诊表</a>
+							</li>
+							<li>
+								<img src="img/sj.png" style="display: inline-block;">
+								<a href="#" style="color:#017489;text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;2016年9月门诊著名专家出诊表</a>
+							</li>
+							<li>
+								<img src="img/sj.png" style="display: inline-block;">
+								<a href="#" style="color:#017489;text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;2016年8月门诊著名专家出诊表</a>
+							</li>
+							<li>
+								<img src="img/sj.png" style="display: inline-block;">
+								<a href="#" style="color:#017489;text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;2016年8月门诊著名专家出诊表</a>
+							</li>
+							<li>
+								<img src="img/sj.png" style="display: inline-block;">
+								<a href="#" style="color:#017489;text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;2016年7月门诊著名专家出诊表</a>
+							</li>
+							<li>
+								<img src="img/sj.png" style="display: inline-block;">
+								<a href="#" style="color:#017489;text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;2016年7月门诊著名专家出诊表</a>
+							</li>
+							<li>
+								<img src="img/sj.png" style="display: inline-block;">
+								<a href="#" style="color:#017489;text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;2016年9月门诊著名专家出诊表</a>
+							</li>
+							<li>
+								<img src="img/sj.png" style="display: inline-block;">
+								<a href="#" style="color:#017489;text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;2016年9月门诊著名专家出诊表</a>
+							</li>
+							<li>
+								<img src="img/sj.png" style="display: inline-block;">
+								<a href="#" style="color:#017489;text-decoration: none;">&nbsp;&nbsp;&nbsp;&nbsp;2016年9月门诊著名专家出诊表</a>
+							</li>
+						</ul>
+					</marquee>
+				</div>
+			</div>
+		</div>
+		<div class="contain_main2">
+			<div class="contain_main2_1">
+				<p style="color:#017489;font-size: 19px;padding-top: 5px;padding-bottom: 5px;text-align: center;"><strong>专家团队:&nbsp;&nbsp;&nbsp;&nbsp;    看治疗专家   &nbsp;&nbsp;&nbsp;&nbsp;通辽市各大医院专家亲诊</strong></p>
+				<p style="text-align: center;color:#fff;font-size: 14px;padding-bottom: 5px;text-shadow: 1px 1px 1px">TEAM OF DOCTOR : PATIENTS REFERRED HOSPITALGENERAL </p>
+			</div>
+			<div class="contain_main2_2">
+				<img src="img/zj1.png" width="77%" id="defaultImg">
+			</div>
+			<div class="contain_main2_3">
+				<!-- <p style="color:#017489;font-size: 40px;padding-top: 30px;"><b>Doc.Robert</b>
+					<span style="color:#ccc;font-size: 12px;position:relative;top: -10px">
+						FEMALE PRCOFESSORS
+					</span><br> -->
+					<!-- <span style="color: #000;font-size: 12px;position:relative;top:-30px;right:-170px">
+						通辽蒙医院口腔科专家
+					</span> -->
+				<!-- </p> -->
+				<!-- <a href="#" style="float: right;">立即预定</a> -->
+				<img src="img/docdoc.png" width="110%" style="position:relative;left: -50px;">
+				<div class="qh"> 
+					<img src="img/zj1.png" width="20%" onmouseover="showDaTu('img/zj1.png')">
+					<img src="img/zj2.png" width="20%" onmouseover="showDaTu('img/zj2.png')">
+					<img src="img/zj3.png" width="20%" onmouseover="showDaTu('img/zj3.png')">
+					<img src="img/zj4.png" width="20%" onmouseover="showDaTu('img/zj4.png')">
+				</div>
+			</div>
+		</div>
+		<div class="contain_main3">
+			<div class="contain_main2_1">
+				<p style="color:#017489;font-size: 19px;padding-top: 5px;padding-bottom: 5px;text-align: center;"><strong>最强科室:&nbsp;&nbsp;&nbsp;&nbsp;    百科治百病   &nbsp;&nbsp;&nbsp;&nbsp;坚持全心全意为人民服务</strong></p>
+				<p style="text-align: center;color:#fff;font-size: 14px;padding-bottom: 5px;text-shadow: 1px 1px 1px">TEAM OF DOCTOR : PATIENTS REFERRED HOSPITALGENERAL </p>
+			</div>
+			<div style="margin-top: 20px">
+				<img src="img/keshi.png" width="100%">
+			</div>
+		</div>
+		<div class="contain_main4">
+			<div class="contain_main2_1">
+				<p style="color:#017489;font-size: 19px;padding-top: 5px;padding-bottom: 5px;text-align: center;"><strong>健康讲堂:&nbsp;&nbsp;&nbsp;&nbsp;    养生小秘诀   &nbsp;&nbsp;&nbsp;&nbsp;愿健康幸福永远伴您左右</strong></p>
+				<p style="text-align: center;color:#fff;font-size: 14px;padding-bottom: 5px;text-shadow: 1px 1px 1px">TEAM OF DOCTOR : PATIENTS REFERRED HOSPITALGENERAL </p>
+			</div>
+			<div class="sp">
+			<br><br>
+				<table border="0" cellspacing="0" cellpadding="0" >
+					<tr>
+						<td align="center" valign="center"><a href="#"><img src="img/sp6.jpg" width="75%"></a></td>
+						<td align="center" valign="center"><a href="#"><img src="img/sp7.jpg" width="75%"></a></td>
+						<td align="center" valign="center"><a href="#"><img src="img/sp6.jpg" width="70%"></a></td>	
+						<!-- <td><a href="#"><img src="img/sp2.jpg" width="100%"></a></td> -->
+					</tr>
+					<tr>
+						<td  align="center" valign="center">
+							<a href="#">
+								养生诀窍1
+								<span style="display: block;">睡前五分钟，美丽常在</span>
+							</a>
+
+						</td>
+						<td  align="center" valign="center">
+							<a href="#">
+								养生诀窍2
+								<span style="display: block;">睡前五分钟，美丽常在</span>
+							</a>
+
+						</td>
+						<td  align="center" valign="center">
+							<a href="#">
+								养生诀窍3
+								<span style="display: block;">睡前五分钟，美丽常在</span>
+							</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="contain_main5">
+			<div class="contain_main5_1">
+				<ul style="float: left;">
+					<li id="diid"><a href="#" style="color:#fff;">网站首页</a></li>
+					<li id="diid"><a href="#" style="color:#fff;">专家在线</a></li>
+					<li id="diid"><a href="#" style="color:#fff;">百科</a></li>
+					<li id="diid"><a href="#" style="color:#fff;">临床服务</a></li>
+					<li id="diid"><a href="#" style="color:#fff;">科研</a></li>
+					<li id="diid"><a href="#" style="color:#fff;">结果查询</a></li>
+					<li id="diid"><a href="#" style="color:#fff;">登陆／注册</a></li>
+				</ul>
+			</div>
+			<div class="contain_main5_2">
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
